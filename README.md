@@ -32,8 +32,8 @@ Manipulate .xlsx files - easy.
 
 ````javascript
 var fs = require('fs');
-var kexcel = require('jkexcel');
-kexcel.new().then(function (wb) {
+var jkexcel = require('jkexcel');
+jkexcel.new().then(function (wb) {
   var sheet = wb.getSheet(0);
   sheet.setCellValue(1, 1, 'Hello world!');
   return wb.pipe(fs.createWriteStream('output.xlsx'));
@@ -45,10 +45,10 @@ kexcel.new().then(function (wb) {
 var path = require('path');
 var express = require('express');
 var app = express();
-var kexcel = require('jkexcel');
+var jkexcel = require('jkexcel');
 
 app.get('/', function (req, res) {
-    kexcel.open(path.join(__dirname, 'example.xlsx')).then(function(workbook) {
+    jkexcel.open(path.join(__dirname, 'example.xlsx')).then(function(workbook) {
         var sheet = workbook.getSheet(0);
         sheet.setCellValue(1,1,'Hello World!');
         sheet.setRow(2, ['Hello', 'even', 'more', 'Worlds']);

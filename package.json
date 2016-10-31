@@ -2,7 +2,7 @@
   "name": "jkexcel",
   "version": "1.0.0",
   "description": "module node xls",
-  "main": "index.js",
+  "main": "js/Workbook.js",
   "directories": {
     "test": "test"
   },
